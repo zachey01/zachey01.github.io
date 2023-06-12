@@ -15,6 +15,7 @@ a {
   color: white;
   font-size: 25px;
   position: relative;
+  margin-left: 15px;
 }
 a::before {
   content: "";
@@ -36,6 +37,7 @@ a::before {
 .links {
   text-align: center;
 }
+
 .donate {
   text-align: center;
   margin-top: 10%;
