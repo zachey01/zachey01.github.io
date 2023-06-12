@@ -36,6 +36,10 @@ a::before {
 .links {
   text-align: center;
 }
+.donate {
+  text-align: center;
+  margin-top: 10%;
+}
 
 @media screen and (max-width: 500px) {
   h1 {
