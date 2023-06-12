@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Moirai+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Moirai+One&family=Noto+Sans:wght@300&display=swap");
 
 body {
   background: black;
@@ -9,6 +9,34 @@ h1 {
   font-size: 100px;
   text-align: center;
 }
+a {
+  text-decoration: none;
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  font-size: 25px;
+  position: relative;
+}
+a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 1.5px;
+  background-color: white;
+}
+
+a:hover:before {
+  width: 100%;
+}
+
+a::before {
+  transition: width 0.35s;
+}
+.links {
+  text-align: center;
+}
+
 @media screen and (max-width: 500px) {
   h1 {
     font-size: 50px;
