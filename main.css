@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Moirai+One&display=swap");
+
+body {
+  background: black;
+}
+h1 {
+  color: white;
+  font-family: "Moirai One", cursive;
+  font-size: 100px;
+  text-align: center;
+}
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+  }
+}
