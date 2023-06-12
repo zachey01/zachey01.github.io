@@ -1,0 +1,12 @@
+body {
+  margin-top: 25px;
+}
+#input,
+#output {
+  width: 100%;
+  height: 250px;
+}
+button {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
