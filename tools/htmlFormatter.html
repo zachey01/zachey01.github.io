@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donate</title>
+    <title>Tools</title>
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../css/main.css" />
     <script src="../js/loader.js"></script>
@@ -30,21 +30,54 @@
           ><i class="fa-brands fa-github"></i
         ></a>
       </div>
+      <ul class="items">
+        <li>
+          <a class="navItem" href="#htmlFormatter"
+            ><i class="fa-brands fa-html5"></i
+          ></a>
+        </li>
+      </ul>
+      <div class="bottom"></div>
     </nav>
     <main>
       <div class="content">
-        <h1>Donate</h1>
+        <h1>HTML Formatter</h1>
         <div class="row">
           <div class="col" style="flex-basis: 550px">
-            <div class="card" style="text-align: center">
-              <iframe
-                width="728"
-                height="200"
-                src="https://widget.qiwi.com/widgets/big-widget-728x200?publicKey=48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iP3aBCDfSdLT53DUhnmNWaeZP8E2B8J1dszEtG4coi7BbhhFDZUUqW3orBFL5YhqM4d5829zZ1kFd9UftWQfUWJWPSKMZwD2sHufURswa6F"
-                allowtransparency="true"
-                scrolling="no"
-                frameborder="0"
-              ></iframe>
+            <div class="card" id="htmlFormatter">
+              <div>
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="Input"
+                    id="input"
+                  ></textarea>
+                </div>
+              </div>
+              <a
+                href="#"
+                class="btn convertBtn"
+                id="convert"
+                onClick="onProcess()"
+                >Convert</a
+              >
+
+              <div>
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="Output"
+                    id="output"
+                  ></textarea>
+                </div>
+              </div>
+              <a
+                href="#"
+                class="btn convertBtn"
+                class="btn btn-primary text-center"
+                onClick="copy()"
+                >Copy</a
+              >
             </div>
           </div>
         </div>
