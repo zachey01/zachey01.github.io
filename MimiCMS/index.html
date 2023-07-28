@@ -1,194 +1,78 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MimiCMS</title>
-    <link rel="stylesheet" href="https://stackedit.io/style.css" />
+    <title>MimiCMS - Best CMS for Game Servers</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/loader.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"
+    />
+    <script>
+      hljs.highlightAll();
+    </script>
   </head>
+  <body>
+    <div class="jumping-dots-loader" id="spinner">
+      <span></span> <span></span> <span></span>
+    </div>
+    <div class="moving-gradient"></div>
 
-  <body class="stackedit">
-    <div class="stackedit__html">
-      <h1 id="mimicms">MimiCMS</h1>
-      <p>
-        <img
-          src="https://media.discordapp.net/attachments/1110890217478557726/1118836804183928922/1.png"
-          alt="MimiCMS by Zachey"
-          width="170"
-          height="170"
-          align="right"
-        />
-      </p>
-      <p>Modular, fast CMS for CS:GO, CS2 (coming soon) servers. Advantages</p>
-      <ul>
+    <nav>
+      <div class="top-items">
+        <a class="navItem char" href="https://zachey01.github.io"
+          ><i class="fa-solid fa-door-open"></i
+        ></a>
+        <a class="navItem char" href="https://github.com/zachey01"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+      <ul class="items">
         <li>
-          <p>
-            Custom payment methods. You can use any payment system, you just
-            need to rewrite the API request template for the official payment
-            system documentation.
-          </p>
+          <a class="navItem" href="#"><i class="fa-solid fa-download"></i></a>
         </li>
         <li>
-          <p>
-            Custom autodonate (i.e. you can use any plugin to issue donations,
-            just specify the command to issue the privilege in the
-            <em>givecmd</em> field).
-          </p>
-        </li>
-        <li>
-          <p>
-            Convenient admin panel for managing the site and the server itself
-            via <em>RCON</em>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Protection against DDOS attacks. IP addresses with suspicious
-            activity will be added to the blacklist.
-          </p>
-        </li>
-        <li>
-          <p>
-            Easy to modify. In the admin panel, you can edit each page to your
-            requirements.
-          </p>
-        </li>
-        <li>
-          <p>
-            Fast and resource-efficient. CMS can even run on the cheapest VPS
-            (P.S: CMS weighs only <em>~45mb</em>.).
-          </p>
-        </li>
-        <li>
-          <p>
-            Full logging. If an error occurs in the CMS, you can easily find out
-            the reasons and fix it, and you can also track the actions of a
-            banned player.
-          </p>
-        </li>
-        <li>
-          <p>Possibility of creating backups.</p>
-        </li>
-        <li>
-          <p>Price. MimiCMS is completely free!</p>
+          <a class="navItem" href="https://github.com/zachey01/MimiCMS"
+            ><i class="fa-brands fa-github"></i
+          ></a>
         </li>
       </ul>
-      <h2 id="installation">1. Installation</h2>
-      <h3 id="cloning-the-repository">1.1 Cloning the repository</h3>
-      <p>Clone this repository:</p>
-      <pre class="language-bash"><code class="prism  language-bash">
-<span class="token function">git</span>  clone  https://github.com/zachey01/MimiCMS.git
-
-</code></pre>
-      <p>And go to the cloned directory:</p>
-      <pre class="language-bash"><code class="prism  language-bash">
-<span class="token function">cd</span>  MimiCMS
-
-</code></pre>
-      <h3 id="install-dependencies">1.2 Install dependencies</h3>
-      <blockquote>
-        <p>P.S: you must have NodeJS and NPM installed</p>
-      </blockquote>
-      <p>To work with CMS, you need to install the necessary dependencies:</p>
-      <pre class="language-bash"><code class="prism  language-bash">
-<span class="token function">npm</span>  i
-
-</code></pre>
-      <p>
-        And if you are using a VPS/VDS, you need to install
-        <a href="https://www.npmjs.com/package/forever">forever</a> for
-        continuous website operation:
-      </p>
-      <pre class="language-bash"><code class="prism  language-bash">
-<span class="token function">npm</span>  i  forever
-
-</code></pre>
-      <h3 id="setup">1.3 Setup</h3>
-      <p>
-        First, rename the env.example file to .env and open it in a text editor.
-      </p>
-      <p>
-        At the beginning, there are variables for connecting to the MySQL
-        database.
-      </p>
-      <p>
-        <code>DB_HOST</code> - this is the location address of the database
-        (usually 127.0.0.1).
-      </p>
-      <p><code>DB_USER</code> - this is the username to access the database.</p>
-      <p>
-        <code>DB_PASSWORD</code> - this is the user password to access the
-        database.
-      </p>
-      <p><code>DB_NAME</code> - this is the name of the database.</p>
-      <p>Next is web server settings:</p>
-      <p>
-        <code>PORT</code> - this is the port on which the site will run (if you
-        want the port not to be displayed in the URL, leave it blank, i.e. port
-        <em>80</em> will be set).
-      </p>
-      <p>
-        <code>DOMAIN</code> - here specify the domain on which the site is
-        hosted, if locally then leave blank
-      </p>
-      <p>Next are the settings of the site itself.</p>
-      <p>
-        <code>STEAM_API_KEY</code> - This is the web API key for Steam, you can
-        get it <a href="https://steamcommunity.com/dev/apikey">here</a>.
-      </p>
-      <p>
-        <code>SECRET</code> - paste a randomly generated string here (minimum 32
-        characters).
-      </p>
-      <p>Other parameters are self-explanatory.</p>
-      <p>Next is the configuration of the server itself.</p>
-      <p><code>SERVER_IP</code> - server IP address.</p>
-      <p><code>SERVER_PORT</code> - server port.</p>
-      <h2 id="accessing-the-admin-panel">2. Accessing the admin panel</h2>
-      <p>To access the admin panel, go to the following URL:</p>
-      <pre><code>
-http://yourdomain.com/admin
-
-</code></pre>
-      <p>
-        You will be prompted to enter the admin username and password, which you
-        specified in the .env file.
-      </p>
-      <h2 id="adding-custom-payment-methods">
-        3. Adding custom payment methods
-      </h2>
-      <p>
-        To add a custom payment method, you need to rewrite the API request
-        template for the official payment system documentation. You can find the
-        API templates in the <code>api/</code> directory.
-      </p>
-      <h2 id="adding-custom-autodonate-methods">
-        4. Adding custom autodonate methods
-      </h2>
-      <p>
-        To add a custom autodonate method, specify the command to grant the
-        privilege in the <code>givecmd</code> field in the admin panel. You can
-        use any plugin to issue donations.
-      </p>
-      <h2 id="creating-backups">5. Creating backups</h2>
-      <p>
-        To create a backup of the site and the database, you can use the
-        built-in backup functionality in the admin panel or enter command:
-        <code>npm run backup</code>. This will create a .sql file dump of the
-        database.
-      </p>
-      <h2 id="getting-support">6. Getting support</h2>
-      <p>
-        If you have any questions about using MimiCMS, you can join the Discord
-        server.
-      </p>
-      <center></center>
-      <p>
-        <img
-          src="https://discordapp.com/api/guilds/1097866586444017676/widget.png?style=banner3"
-          alt="Discord Banner 3"
-        />
-      </p>
-    </div>
+      <div class="bottom">
+        <a class="navItem char" href="https://discord.gg/dzuhSFG2cX"
+          ><i class="fa-solid fa-question"></i
+        ></a>
+      </div>
+    </nav>
+    <main>
+      <div class="content">
+        <h1>MimiCMS</h1>
+        <p>The best CMS for Valve Game Servers!</p>
+        <div class="row">
+          <div class="col" style="flex-basis: 550px">
+            <div class="card">
+              <h2>Installation</h2>
+              <pre><code class="hljs">npm i mimicms -g</code></pre>
+              <pre><code class="hljs">npx mimicms install</code></pre>
+              <p>And answer the questions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
