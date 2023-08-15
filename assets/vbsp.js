@@ -829,7 +829,7 @@ var VBSP = function (VBSP) {
   }
   function integrateWasmJS() {
     var wasmTextFile = "vbsp.wast";
-    var wasmBinaryFile = "http://cdn.zachey.space/assets/vbsp.wasm";
+    var wasmBinaryFile = "vbsp.wasm";
     var asmjsCodeFile = "vbsp.temp.asm.js";
     if (typeof Module["locateFile"] === "function") {
       if (!isDataURI(wasmTextFile)) {
@@ -4011,7 +4011,7 @@ var VBSP = function (VBSP) {
         }
       }
     };
-    color_req.open("GET", "http://cdn.zachey.space/assets/colors.json", true);
+    color_req.open("GET", "colors.json", true);
     color_req.send();
   };
   var _loadMap = Module.cwrap("loadMap", null, ["number", "number"]);
