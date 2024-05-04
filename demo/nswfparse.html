@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NSWFparse</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/nswfparse/dist/nswfparse.js"></script>
+    <h2>Code</h2>
+    <pre>    <script style="display: block">
+  const options = {
+    tags: ["toys", "forest"],
+    numPage: 1,
+    limit: 5,
+    remove_empty: true,
+    parse_tags: true,
+    random: false,
+  };
+
+  nswfparse
+    .r34(options)
+    .then((payload) => {
+          document.getElementById("posts").innerText = JSON.stringify(
+        payload.posts,
+        null,
+        2
+      );
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+</script></pre>
+    <h2>Output</h2>
+    <div id="posts"></div>
+  </body>
+</html>
