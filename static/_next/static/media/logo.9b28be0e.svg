@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 231 216" style="display:block" xmlns="http://www.w3.org/2000/svg">
-  <path d="M0 0h231v216H0V0Z" style="fill:#000000"/>
-  <path d="M 45 38 L 116 38 L 116 73.014 L 151 73.014 L 151 38 L 186 38 L 186 179.055 L 116 179.055 L 116 144.04 L 81 144.04 L 81 179.055 L 45 179.055 L 45 38 Z" style="fill: rgb(255, 255, 255);"/>
-  <path d="M 116 107.998 L 151 107.998 L 151 144 L 116 144 L 116 107.998 Z" style="fill: rgb(0, 0, 0);"/>
-  <path d="M0 0h35v35H0V0Z" style="fill:#000000" transform="matrix(1, 0, 0, 1, 81, 73.00000000000001)"/>
-</svg>
